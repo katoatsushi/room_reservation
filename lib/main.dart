@@ -9,6 +9,7 @@ import './auth/get_auth_info.dart';
 import './setting/set_params.dart';
 import './customer/account_setting.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,6 +41,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // 日本語フォントに直す
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale("ja", "JP"),
+      ],
+      // ここまで
       home: FutureBuilder<bool>(
         future: isLoggedIn(),
         builder: (context, snapshot) {

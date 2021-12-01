@@ -205,11 +205,11 @@ class _CustomerRecordHistory extends State<RecordHistory> {
 
     return(
       SizedBox(
-        width: MediaQuery.of(context).size.width * 0.24,
+        width: MediaQuery.of(context).size.width * 0.22,
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 0, horizontal: 8),
           child: ElevatedButton(
-            child: const Text('詳細'),
+            child: const Text('詳細', style: TextStyle( fontSize: 15 ),),
             style: ElevatedButton.styleFrom(
               primary: Colors.blueGrey,
               onPrimary: Colors.white,
@@ -263,9 +263,9 @@ class _CustomerRecordHistory extends State<RecordHistory> {
     if (apo_time.isAfter(deadLine)) {
       return(
           SizedBox(
-            width: MediaQuery.of(context).size.width * 0.25,
+            width: MediaQuery.of(context).size.width * 0.22,
              child: ElevatedButton(
-                child: const Text('キャンセル'),
+                child: const Text('キャンセル', style: TextStyle( fontSize: 15 ),),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.lightBlueAccent,
                   onPrimary: Colors.white,

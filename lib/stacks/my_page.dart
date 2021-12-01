@@ -7,6 +7,7 @@ import '../auth/get_auth_info.dart';
 import '../setting/set_params.dart';
 import '../customer/account_setting.dart';
 
+
 class MyPage extends StatefulWidget {
   const MyPage({Key key}) : super(key: key);
   static String id = 'my_page';
@@ -45,8 +46,7 @@ class _CustomerMyPage extends State<MyPage> {
 
     final resp = await http.get(url, headers: headers);
     var body = json.decode(resp.body);
-    print(body);
-    
+
     final int numbers_of_contract = body["numbers_of_contract"];
 
     var this_month_count = numbers_of_contract - body["this_month_book_count"];
@@ -75,7 +75,6 @@ class _CustomerMyPage extends State<MyPage> {
   Widget tabMenues(){
     return(
         Drawer(
-
           child: ListView(
             children: <Widget>[
 

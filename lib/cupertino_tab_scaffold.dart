@@ -42,6 +42,10 @@ class _CupertinoMainBarState extends State<CupertinoMainBar> {
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person,),
+                title: Text('予約管理')
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person,),
                 title: Text('マイページ')
             ),
           ],
@@ -58,6 +62,8 @@ class _CupertinoMainBarState extends State<CupertinoMainBar> {
                   Navigator.pushAndRemoveUntil(context, new MaterialPageRoute( builder: (context) => new CupertinoMainBar(index_id: 1) ), (_) => false);
                 }else if(index == 2){
                   Navigator.pushAndRemoveUntil(context, new MaterialPageRoute( builder: (context) => new CupertinoMainBar(index_id: 2) ), (_) => false);
+                }else if(index == 3){
+                  Navigator.pushAndRemoveUntil(context, new MaterialPageRoute( builder: (context) => new CupertinoMainBar(index_id: 3) ), (_) => false);
                 }
 
               }
@@ -73,29 +79,24 @@ class _CupertinoMainBarState extends State<CupertinoMainBar> {
             case 0: // 1番左のタブが選ばれた時の画面
               return CupertinoTabView(builder: (context) {
                 return CupertinoPageScaffold(
-                  // navigationBar: CupertinoNavigationBar(
-                  //   middle: Text('Roomプラス'),
-                  // ),
                   child: RoomPlusList(), // 表示したい画面のWidget
                 );
               });
             case 1: // ほぼ同じなので割愛
               return CupertinoTabView(builder: (context) {
                 return CupertinoPageScaffold(
-                  // navigationBar: CupertinoNavigationBar(
-                  //   middle: Text('予約'),
-                  // ),
                   child: SelectStoreFitness(), // 表示したい画面のWidget
                 );
               });
             case 2:
               return CupertinoTabView(builder: (context) {
                 return CupertinoPageScaffold(
-                  // navigationBar: CupertinoNavigationBar(
-                  //   // leading: Icon(Icons.home), // ページのヘッダ左のアイコン
-                  //   middle: Text('マイページ'),
-                  //   trailing: Icon(Icons.settings)
-                  // ),
+                  child: MyPage(), // 表示したい画面のWidget
+                );
+              });
+            case 3:
+              return CupertinoTabView(builder: (context) {
+                return CupertinoPageScaffold(
                   child: MyPage(), // 表示したい画面のWidget
                 );
               });

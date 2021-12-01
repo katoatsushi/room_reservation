@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import './stacks/my_page.dart';
+import './stacks/customer_info.dart';
 import './appointments/select_store_fitness.dart';
 import './appointments/room_plus_list.dart';
 import './setting/routes.dart';
+
 
 class CupertinoMainBar extends StatefulWidget {
   final int index_id;
@@ -97,7 +99,7 @@ class _CupertinoMainBarState extends State<CupertinoMainBar> {
             case 3:
               return CupertinoTabView(builder: (context) {
                 return CupertinoPageScaffold(
-                  child: MyPage(), // 表示したい画面のWidget
+                  child: CustomerInfos(), // 表示したい画面のWidget
                 );
               });
           }

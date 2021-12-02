@@ -8,6 +8,7 @@ import '../setting/set_params.dart';
 import '../customer/account_setting.dart';
 // import 'package:charts_flutter/flutter.dart' as charts;
 import './weight_history.dart';
+import './sample_graph.dart';
 
 class CustomerInfos extends StatefulWidget {
   const CustomerInfos({Key key}) : super(key: key);
@@ -94,28 +95,6 @@ class _CustomerInfoPage extends State<CustomerInfos> {
     );
   }
 
-
-  // final weightList = <WeightData>[
-  //   WeightData(DateTime(2020, 10, 2), 50),
-  //   WeightData(DateTime(2020, 10, 3), 53),
-  //   WeightData(DateTime(2020, 10, 4), 40),
-  //   WeightData(DateTime(2020, 10, 5), 50),
-  //   WeightData(DateTime(2020, 10, 6), 53),
-  //   WeightData(DateTime(2020, 10, 7), 40)
-  // ];
-
-  // List<charts.Series<WeightData, DateTime>> _createWeightData(List<WeightData> weightList) {
-  //   return [
-  //     charts.Series<WeightData, DateTime>(
-  //       id: 'Muscles',
-  //       data: weightList,
-  //       colorFn: (_, __) => charts.MaterialPalette.blue.shadeDefault,
-  //       domainFn: (WeightData weightData, _) => weightData.date,
-  //       measureFn: (WeightData weightData, _) => weightData.weight,
-  //     )
-  //   ];
-  // }
-
   @override
   Widget build(BuildContext context) {
 
@@ -167,7 +146,6 @@ class _CustomerInfoPage extends State<CustomerInfos> {
                   ),
                 textAlign: TextAlign.left),
               // 興味関心
-              // 興味関心リストが12個以上ある場合は、さらに見るのような表記にするか、スクロール
               Container(
                 color: Colors.white10,
                 width: MediaQuery.of(context).size.width * 0.95,
@@ -196,14 +174,13 @@ class _CustomerInfoPage extends State<CustomerInfos> {
                   ),
                 textAlign: TextAlign.left),
               // 体重変化
-              Container(
-                // color: Colors.black87,
-                width: MediaQuery.of(context).size.width * 0.95,
-                height: MediaQuery.of(context).size.height * 0.40,
-                child: TopPage(),
-                // child: charts.TimeSeriesChart(
-                //   _createWeightData(weightList),
-                // ),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.95,
+                  height: MediaQuery.of(context).size.height * 0.40,
+                  child: LineChartWeight(),
+                ),
               ),
             ],
           )

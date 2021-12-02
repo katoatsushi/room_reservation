@@ -75,22 +75,4 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  // FutureBuilder(
-  //   future: initialize(),
-  //   builder: (context, snapshot) {
-  //   return MaterialApp(
-  //     home: initialize()
-  //     ? LogIn()
-  //     : CupertinoMainBar(index_id: 1),
-  //     debugShowCheckedModeBanner: false,
-  //     routes: <String, WidgetBuilder> {
-  //       '/root': (BuildContext context) => new CupertinoMainBar(),
-  //       '/home': (BuildContext context) => new MyPage(),
-  //       '/record_history': (BuildContext context) => new RecordHistory(),
-  //       '/appointment': (BuildContext context) => new SelectStoreFitness(),
-  //     },
-  //   );
-  //   },
-  // )
-
 }
